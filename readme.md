@@ -90,6 +90,9 @@ NB-react kight and dark mode project
 4.GET events  - users get the event list and details posted by the admin
 5.PUT events details - section numberofbookings and totalrevenue of the event document are going to be changed
 6.GET events details ADMIN - An admin will get the details of events after creation of events and the total number number of bookings 
+7.DELETE an event ... The admin can delete an event.. the users who had boked are going to be notified of the deletion.... Thsi feature is going to be added later on after project completion....For starters the event is going to disappear from the events list     
+8.PUT...The events details are going to be modified by the admin---users who booked the event wont get a notification ... notification feature going to be done later
+9.book event---The user is goinng to send its ID to the attendes section in the events collection
 
 -Backend Routes(should be according the steps in the "Controllers" section above )
 

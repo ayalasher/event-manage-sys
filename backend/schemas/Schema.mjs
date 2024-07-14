@@ -22,11 +22,11 @@ const user = new mongoose.Schema({
     },
     bookedevents:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Event'
+        ref: 'event'
     }], 
     markedevents:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Event'
+        ref: 'event'
     }]
 })
 
@@ -42,14 +42,12 @@ const admin = new mongoose.Schema({
     },
     eventlist:[{
         // the evnts will be listed by their ID's
-        type: mongoose.Schema.Types.ObjectId
+        type: mongoose.Schema.Types.ObjectId , 
+        ref:'event'
     }],
     adminpassword:{
         type:String
-    },
-    eventslist:[{
-        type: mongoose.Schema.Types.ObjectId
-    }]
+    }
 })
 
 const event = new mongoose.Schema({
@@ -71,6 +69,7 @@ const event = new mongoose.Schema({
     } ,
     attendes:[{
         type: mongoose.Schema.Types.ObjectId,
+        ref:'user'
     }],
     createdAt:{
         type:Date,
