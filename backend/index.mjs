@@ -12,7 +12,14 @@ app.use(cors())
 const PORT = process.env.PORT || 3000 
 
 app.get('/',(req,res)=>{
-    res.send('Hello World from express')
+
+     // cookies backend learning session
+    // setting up a cookie
+    // maxAge is measured in milliseconds
+    res.cookie('cookie1','Hello',{maxAge:60000*60})
+
+    res.send("The event management system")
+   
 })
 
 console.log('Event management system backend');

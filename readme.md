@@ -94,6 +94,9 @@ NB-react kight and dark mode project
 8.PUT...The events details are going to be modified by the admin---users who booked the event wont get a notification ... notification feature going to be done later
 9.book event---The user is goinng to send its ID to the attendes section in the events collection
 
+10.autheniticate a user-GET
+11.autheniticate an admin-GET
+
 -Backend Routes(should be according the steps in the "Controllers" section above )
 
 
