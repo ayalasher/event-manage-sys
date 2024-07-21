@@ -152,39 +152,63 @@ const fetcheventslist = async(req,res)=>{
 // See the code snippets below
 // 5.PUT events details - section numberofbookings and totalrevenue of the event document are going to be updated
 // 5 is tied to 9
-// 6.GET events details ADMIN - An admin will get the details of events after creation of events and the total number number of bookings 
-// Event.findById(eventId)
-//   .populate('attendees')
-//   .exec((err, event) => {
-//     if (err) {
-//       console.error('Error finding event:', err);
-//     } else {
-//       console.log('Number of bookings:', event.numberOfBookings);
-//       console.log('Total revenue:', event.totalRevenue);
-//     }
-//   });
+// 6.GET events details ADMIN--done - An admin will get the details of events after creation of events and the total number number of bookings 
+
+const fetcheventslistadmin = async(req,res)=>{
+
+    Eventmodel.findById(eventId)
+  .populate('attendees')
+  .exec((err, event) => {
+    if (err) {
+      console.error('Error finding event:', err);
+    } else {
+      console.log('Number of bookings:', event.numberOfBookings);
+      console.log('Total revenue:', event.totalRevenue);
+    }
+  });
+
+
+    let eventslist ; 
+
+    try {
+        eventslist = await Eventmodel.find(); 
+    } catch (error) {
+        console.log(error);
+    }
+    if (!eventslist) {
+        return res.status(404).json({message:"No events found"})
+    }
+    return res.status(200).json({eventslist})
+}
+
+
+// number of bookings and total revenue is take care of
+const userbooking = async(req,res)=>{
+// Assume userId and eventId are available
+Event.findById(eventId, (err, event) => {
+  if (err) {
+    console.error('Error finding event:', err);
+  } else {
+    event.attendees.push(userId);
+    event.save((err) => {
+      if (err) {
+        console.error('Error saving event:', err);
+      } else {
+        console.log('User added to event successfully!');
+        console.log('Number of bookings:', event.numberOfBookings); // This will be updated
+        console.log('Total revenue:', event.totalRevenue); // This will be updated
+      }
+    });
+  }
+});
+}
+
 
 
 // const Event = require('./models/Event');
 // const User = require('./models/User');
 
-// Assume userId and eventId are available
-// Event.findById(eventId, (err, event) => {
-//   if (err) {
-//     console.error('Error finding event:', err);
-//   } else {
-//     event.attendees.push(userId);
-//     event.save((err) => {
-//       if (err) {
-//         console.error('Error saving event:', err);
-//       } else {
-//         console.log('User added to event successfully!');
-//         console.log('Number of bookings:', event.numberOfBookings); // This will be updated
-//         console.log('Total revenue:', event.totalRevenue); // This will be updated
-//       }
-//     });
-//   }
-// });
+
 
 
 
@@ -226,13 +250,19 @@ const updateevent = async(req,res)=>{
     return res.status(200).json({eventtoupdate})
 
 }
+
+// done in 5
 // 9.PUT book event---The user is goinng to send its ID to the attendes section in the events collection
 // Taken care of under the virtual activity
 
 
+// process to be done in the routes page
+// 10.autheniticate a user-POST
+// 11.autheniticate an admin-POST
 
-// 10.autheniticate a user-GET
-// 11.autheniticate an admin-GET
+// checking authentication status user
+
+// checking authentication status admin
 
 
 //12. DELETE an admin account
@@ -265,3 +295,6 @@ const deleteuser = async(req,res)=>{
         return res.status(500).json({message:"failed to delete the user"})
     }
 }
+
+ls 
+export {addevent,adduser,addadmin,fetcheventslist,fetcheventslistadmin,userbooking,deleteevent,updateevent,deleteadmin,deleteuser}
