@@ -7,8 +7,9 @@ import mongoose from "mongoose";
 // users schema
 const user = new mongoose.Schema({
     username:{
-        type:String,
-        required:true
+        type:mongoose.Schema.type.String ,
+        required:true ,
+        unique:true
     },
 
     useremail:{
@@ -34,7 +35,8 @@ const user = new mongoose.Schema({
 
 const admin = new mongoose.Schema({
     adminname:{
-        type:String
+        type:String , 
+        unique:true
     },
 
     adminemail:{
@@ -46,7 +48,8 @@ const admin = new mongoose.Schema({
         ref:'event'
     }],
     adminpassword:{
-        type:String
+        type:String ,
+        required:true
     }
 })
 
