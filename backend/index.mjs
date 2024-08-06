@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoos from './mongoose/mongoconnection.mjs'
-
+import approuter from './routes/Systemroutes.mjs';
 
 import cors from 'cors'
  
@@ -21,6 +21,8 @@ app.get('/',(req,res)=>{
     res.send("The event management system")
    
 })
+
+app.use('/eventmng',approuter)
 
 console.log('Event management system backend');
 

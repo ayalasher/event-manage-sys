@@ -62,3 +62,4 @@ approuter.post('/auth-admin',passport.authenticate("local"),(req,res)=>{
     res.sendStatus(200).send({message:"authentication succesful "})
     console.log(req.admin);
 })
+export default approuter ; 

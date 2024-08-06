@@ -296,5 +296,5 @@ const deleteuser = async(req,res)=>{
     }
 }
 
-ls 
+
 export {addevent,adduser,addadmin,fetcheventslist,fetcheventslistadmin,userbooking,deleteevent,updateevent,deleteadmin,deleteuser}
