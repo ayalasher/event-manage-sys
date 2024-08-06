@@ -1,7 +1,7 @@
 //  9 , 5 , 6 ...... 10 , 11
 
 // controllers for the application
-import {Eventmodel,usermodel,adminmodel} from '../controllers/controller.mjs'
+import { Eventmodel,usermodel,adminmodel } from '../schemas/Schema.mjs';
 import mongoose, { mongo } from 'mongoose';
 
 

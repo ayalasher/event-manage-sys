@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 // users schema
 const user = new mongoose.Schema({
     username:{
-        type:mongoose.Schema.type.String ,
+        type: String,
         required:true ,
         unique:true
     },
@@ -99,4 +99,6 @@ const usermodel = mongoose.model('user',user)
 
 const adminmodel = mongoose.model('admin',admin)
 
-module.exports = {Eventmodel,usermodel,adminmodel} ; 
+ 
+
+export {Eventmodel,usermodel,adminmodel} ;

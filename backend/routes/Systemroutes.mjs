@@ -11,15 +11,15 @@ import cookieParser from 'cookie-parser'
 const app = express()
 app.use(express.json())
 
-app.use(cookieParser("Keyboard cat"))
+app.use(cookieParser("fsystem"))
 
 const approuter = express.Router()
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'fsystem',
     saveUninitialized:false,
     resave:false,
     cookie:{
-        maxAge: 60000*1000*1000*1000
+        maxAge: 60000*1000*1000
     }
 }))
 

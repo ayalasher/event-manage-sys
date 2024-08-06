@@ -1,7 +1,7 @@
 import  Passport from "passport";
 
 import { Strategy } from "passport-local";
-
+// sessions is used with auth
 import usermodel from '../schemas/Schema.mjs'
 
 import mongoose from "mongoose";

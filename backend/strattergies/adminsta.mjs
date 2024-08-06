@@ -8,6 +8,7 @@ import session from "express-session";
 
 import mongoose from "mongoose";
 
+
 Passport.serializeUser((user,done)=>{
     console.log(`inside serialize user`);
     console.log(user);
