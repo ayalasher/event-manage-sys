@@ -1,12 +1,7 @@
 import Passport from "passport";
-
 import Strategy from "passport-local";
-
 import adminmodel from '../schemas/Schema.mjs'
 
-import session from "express-session";
-
-import mongoose from "mongoose";
 
 
 Passport.serializeUser((user,done)=>{

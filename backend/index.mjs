@@ -6,6 +6,8 @@ import session from 'express-session';
  
 const app = express() ; 
 app.use(express.json())
+
+// session is for learning
 app.use(session({
     secret:"fssystem",
     saveUninitialized:false,

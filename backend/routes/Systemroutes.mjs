@@ -1,9 +1,6 @@
 import express from 'express'
-
 import passport from 'passport'
-
 import session from 'express-session'
-
 import cookieParser from 'cookie-parser'
 
 
@@ -52,14 +49,30 @@ approuter.post('/authuser',)
 
 // import schema into stratergies and make it work there
 // make up the stratergy
-approuter.post('/auth-user',passport.authenticate("local"),(req,res)=>{
+approuter.post('/authuser',passport.authenticate("local"),(req,res)=>{
     res.sendStatus(200).send({message:"authentication succesful"})
     console.log("authentication succesful");
     console.log(req.user);
+    req.session.user = finduser ;
+    return req.session.user ? res.status(200).json({message:"USER FOUND !!"}) : res.status(404).json({message:"USER NOT FOUND !!"})
+
 })
 
-approuter.post('/auth-admin',passport.authenticate("local"),(req,res)=>{
+approuter.post('/authadmin',passport.authenticate("local"),(req,res)=>{
     res.sendStatus(200).send({message:"authentication succesful "})
     console.log(req.admin);
+    req.session.admin = findadmin ;
+    return req.session.admin ? res.status(200).json({message:"ADMIN FOUND !!"}) : res.status(404).json({message:"ADMIN NOT FOUND"})
+
 })
+
+approuter.get('/authuser/status',(req,res)=>{
+    return req.session.user ? res.status(200).json({message:"USER FOUND !!"}) : res.status(404).json({message:"USER NOT FOUND !!"})
+})
+
+approuter.get('/authadmin/status ',(req,res)=>{
+    return req.session.admin ? res.status(200).json({message:"ADMIN FOUND !!"}) : res.status(404).json({message:"ADMIN NOT FOUND"})
+})
+
+
 export default approuter ; 
