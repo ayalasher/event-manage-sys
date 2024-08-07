@@ -1,6 +1,7 @@
 import Passport from "passport";
 import Strategy from "passport-local";
 import adminmodel from '../schemas/Schema.mjs'
+import { comparepassword } from "../hashing/Helper.mjs";
 
 
 
@@ -31,7 +32,7 @@ export default  Passport.use(
         try {
             const findadmin = await adminmodel.findOne({adminname})
             if(!adminname) throw new Error("Admin not found")
-            if(findadmin.adminpassword!== adminpassword ) throw new Error("Invalid password")
+            if(comparepassword(adminpassword,findadmin.adminpassword)) throw new Error("Invalid password")
             done(null,findadmin)
         } catch (error) {
            done(error,null) 

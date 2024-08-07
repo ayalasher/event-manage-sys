@@ -2,6 +2,7 @@ import  Passport from "passport";
 import { Strategy } from "passport-local";
 // sessions is used with auth
 import usermodel from '../schemas/Schema.mjs'
+import { comparepassword } from "../hashing/Helper.mjs";
 
 
 Passport.serializeUser((user,done)=>{
@@ -33,7 +34,7 @@ export default Passport.use(
         try {
             const finduser = await  usermodel.findOne({username})
             if(!username) throw new Error("user not found !!")
-            if(finduser.userpassword!== userpassword) throw new Error("invalid password !!")   
+            if(!comparepassword(userpassword,finduser.userpassword)) throw new Error("invalid password !!")   
                 done(null,finduser)
         } catch (error) {
             done(error,null)

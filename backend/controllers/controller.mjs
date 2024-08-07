@@ -3,8 +3,9 @@
 // controllers for the application
 import { Eventmodel,usermodel,adminmodel } from '../schemas/Schema.mjs';
 import mongoose, { mongo } from 'mongoose';
+import  hashpassword  from '../hashing/Helper.mjs';
 
-
+// import { hashpassword } from '../hashing/Helper.mjs';
 // -Controllers
 // 1.POST event details-admin creates events
 const addevent = async(req,res)=>{
@@ -48,16 +49,17 @@ const addevent = async(req,res)=>{
 
 // 2.POST users  details-users registration
 const adduser = async(req,res)=>{
-    const {username,useremail,userpassword,bookedevents,markedevents} = req.body ;
 
+
+    const {username,useremail,userpassword,bookedevents,markedevents} = req.body ;  
+    const up = hashpassword(userpassword)
     const newuser = new usermodel({
         username,
         useremail,
-        userpassword,
+        userpassword:up,
         bookedevents : bookedevents || [] ,
         markedevents : markedevents || []
     })
-
     // start session
     const session = await mongoose.startSession() ; 
     // start transaction
@@ -106,11 +108,11 @@ const adduser = async(req,res)=>{
 
 const addadmin = async(req,res)=>{
     const {adminname,adminemail,adminpassword,eventlist} = req.body ; 
-
+    const ap = hashpassword(adminpassword)
     const newadmin = new adminmodel({
         adminname,
         adminemail,
-        adminpassword,
+        adminpassword:ap,
         eventlist : eventlist || []
     })
     const session = await mongoose.startSession();
