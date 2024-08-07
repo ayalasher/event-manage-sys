@@ -4,7 +4,8 @@ import session from 'express-session'
 import cookieParser from 'cookie-parser'
 import '../strattergies/usersta.mjs'
 import '../strattergies/adminsta.mjs'
-
+import MongoStore from 'connect-mongo'
+import mongoose from 'mongoose'
 
 const app = express()
 app.use(express.json())
@@ -17,13 +18,17 @@ app.use(session({
     resave:false,
     cookie:{
         maxAge: 60000*1000*1000
-    }
+    },
+    store: MongoStore.create({
+        client:mongoose.connection.getClient()
+    })
 }))
 
 app.use(passport.initialize())
 app.use(passport.session())
 
 import { addevent,adduser,addadmin,fetcheventslist,fetcheventslistadmin,userbooking,deleteadmin,updateevent,deleteevent,deleteuser } from '../controllers/controller.mjs'
+import mongoose from 'mongoose'
 
 approuter.post('/addevent',addevent) ; 
 
