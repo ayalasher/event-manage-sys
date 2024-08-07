@@ -1,13 +1,13 @@
-import express from 'express'
+import express, { response } from 'express'
 import passport from 'passport'
 import session from 'express-session'
 import cookieParser from 'cookie-parser'
-
+import '../strattergies/usersta.mjs'
+import '../strattergies/adminsta.mjs'
 
 
 const app = express()
 app.use(express.json())
-
 app.use(cookieParser("fsystem"))
 
 const approuter = express.Router()
@@ -67,11 +67,35 @@ approuter.post('/authadmin',passport.authenticate("local"),(req,res)=>{
 })
 
 approuter.get('/authuser/status',(req,res)=>{
+    console.log(req.session);
+    console.log(req.user);
+    
     return req.session.user ? res.status(200).json({message:"USER FOUND !!"}) : res.status(404).json({message:"USER NOT FOUND !!"})
 })
 
 approuter.get('/authadmin/status ',(req,res)=>{
+    console.log(req.session);
+    console.log(req.admin);
+    
+    
     return req.session.admin ? res.status(200).json({message:"ADMIN FOUND !!"}) : res.status(404).json({message:"ADMIN NOT FOUND"})
+})
+
+approuter.post('/authuser/logout',(req,res)=>{
+    if(!req.user) return res.sendStatus(401)
+    req.logout((err)=>{
+    if(err) return res.sendStatus(400)
+        
+    })
+    res.sendStatus(200)
+})
+
+approuter.post('/authadmin/logout',(req,res)=>{
+    if(!req.admin) return res.sendStatus(401)
+    req.logout((err)=>{
+    if(err) return res.sendStatus(400)
+})
+    res.send(200)
 })
 
 

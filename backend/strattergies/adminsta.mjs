@@ -22,9 +22,9 @@ Passport.deserializeUser(async(id,done)=>{
     }
 })
 
-
-Passport.use({
-    new : Strategy( async (adminname,adminpassword,done)=>{
+  
+export default  Passport.use(
+    new Strategy( async (adminname,adminpassword,done)=>{
         console.log(`adminname:${adminname}`);
         console.log(`adminpassword:${adminpassword}`);
 
@@ -37,4 +37,4 @@ Passport.use({
            done(error,null) 
         }
     })
-})
+)

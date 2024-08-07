@@ -102,3 +102,5 @@ const adminmodel = mongoose.model('admin',admin)
  
 
 export {Eventmodel,usermodel,adminmodel} ;
+
+export default usermodel

@@ -25,8 +25,8 @@ Passport.deserializeUser( async (id,done)=>{
 })
 
 
-export default Passport.use({
-    new :Strategy( async (username,userpassword,done)=>{
+export default Passport.use(
+    new Strategy  ( async (username,userpassword,done)=>{
         console.log(`username:${username}`);
         console.log(`userpassword:${userpassword}`);
 
@@ -41,4 +41,4 @@ export default Passport.use({
 
        
     }) 
-})
+)
