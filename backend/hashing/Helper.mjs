@@ -13,4 +13,3 @@ export const comparepassword = (plain,hashed)=>{
 }
 
 export default hashpassword ; 
-
