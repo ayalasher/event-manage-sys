@@ -5,7 +5,6 @@ import cookieParser from 'cookie-parser'
 import '../strattergies/usersta.mjs'
 import '../strattergies/adminsta.mjs'
 import MongoStore from 'connect-mongo'
-import mongoose from 'mongoose'
 
 const app = express()
 app.use(express.json())
