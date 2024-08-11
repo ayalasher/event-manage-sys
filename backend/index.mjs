@@ -34,7 +34,7 @@ app.get('/',(req,res)=>{
    
 })
 
-app.use('/evemng',approuter)
+app.use('/evenmg',approuter)
 console.log('Event management system backend');
 
 
