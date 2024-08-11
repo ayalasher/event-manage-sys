@@ -33,7 +33,7 @@ const addevent = async(req,res)=>{
     session.startTransaction()
 
     try {
-        await newevent.save({session})
+        await newevent.save(session)
         session.commitTransaction()
         session.endSession()
       return  res.status(200).json({newevent})
@@ -70,7 +70,7 @@ const adduser = async(req,res)=>{
         
 
         // saving
-        await newuser.save({session}) 
+        await newuser.save(session) 
 
         //Updating booked to reference this user
         if (bookedevents&&bookedevents.length> 0) {
@@ -119,7 +119,7 @@ const addadmin = async(req,res)=>{
     session.startTransaction() ; 
 
     try {
-        await newadmin.save({session})
+        await newadmin.save(session)
         await session.commitTransaction()
         session.endSession()
        return res.status(200).json({newadmin})
