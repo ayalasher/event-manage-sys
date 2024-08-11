@@ -5,28 +5,44 @@ import { Eventmodel,usermodel,adminmodel } from '../schemas/Schema.mjs';
 import mongoose, { mongo } from 'mongoose';
 import  hashpassword  from '../hashing/Helper.mjs';
 
+import express from 'express';
+
+
+const app = express()
+
+app.use(express.json())
+
 // import { hashpassword } from '../hashing/Helper.mjs';
 // -Controllers
 // 1.POST event details-admin creates events
 const addevent = async(req,res)=>{
-    const {eventname,eventorganiser,eventprice,eventvenue,eventdate,eventTime} =  req.body ;
+    const {eventname,eventorganiser,eventprice,eventvenue,eventdate,attendes,createdAt,eventTime} =  req.body ;
+
+   const edate = Date.parse(eventdate)
+   const etime = Date.parse(eventTime)
 
     // time-stamp for when the event is created
     const currentdate = new Date() ;
+    console.log(currentdate);
+    console.log(currentdate.getHours());
+    console.log(currentdate.getMinutes());
+    
+    
 
-    //ensure eventdate and eventtime are future dates
-    if (new Date(eventdate<=currentdate||new Date(eventTime)<= currentdate )) {
-       return res.status(400).json({message:"Event date and time must be of the future !!! "})
-    }
+    // if (new Date(edate<currentdate||new Date(etime)< currentdate )) {
+    //    return res.status(400).json({message:"Event date and time must be of the future !!! "})
+    // }
 
     const newevent = new Eventmodel({
-        eventname,
-        eventorganiser,
-        eventprice,
-        eventvenue,
-        eventdate,
-        eventtime:eventTime,
-        createdAt : currentdate
+       eventname,
+       eventorganiser,
+       eventprice,
+       eventvenue,
+       eventdate:edate , 
+       attendes,
+       createdAt,
+       eventTime:etime
+
     })
 
     const session = await mongoose.startSession()
