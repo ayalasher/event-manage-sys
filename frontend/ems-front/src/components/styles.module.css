@@ -29,6 +29,7 @@ body{
 }
 
 .trial{
+    display: flex;
     margin-top: 3%;
     align-items:  center;
     padding: 4%;
@@ -38,11 +39,23 @@ body{
     color: black; 
     text-decoration: none;
     text-align: center;
-    padding: 1.5%;
-    margin: 1.5%;
+    padding: 1%;
+    margin: 1%;
     border:2px solid black ;    
     border-radius: 6px;
-    width: 40%;
+    width: 10%;
     font-weight: 500;
-    align-content: center;
+}
+
+.lsbuttonstxt :hover {
+    font-size: small;
+    color: black; 
+    text-decoration: none;
+    text-align: center;
+    padding: 1.5%;
+    margin: 1.5%;
+    border:2px solid #68A4FF  ;    
+    border-radius: 6px;
+    width: 10%;
+    font-weight: 500;
 }

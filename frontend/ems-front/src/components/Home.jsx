@@ -7,7 +7,7 @@ export default function Home() {
         {/* <Link to={'/'} >Home</Link> */}
         <div className={styles.trial} >
         <Link className={styles.lsbuttonstxt}  to={'/login'} >Login</Link>
-        <Link className={styles.lsbuttonstxt} to={'/Signup'} >Sign up </Link>
+        <Link className={styles.lsbuttonstxt} to={'/Signup'} >Signup </Link>
         </div>
        
         
