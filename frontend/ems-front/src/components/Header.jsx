@@ -1,5 +1,11 @@
+import styles from './styles.module.css'
+
 export default function Header() {
     return <div>
-        <h2>Destiny events</h2>
+
+        <div className={styles.htextc} >
+            <h2 className={styles.htext} >Destiny events</h2>
+        </div>
+       
     </div>
 }

@@ -5,13 +5,14 @@ import Home from './components/Home.jsx'
 import Login from './components/Login.jsx'
 import Signup from './components/Signup.jsx'
 import Asll from './components/Asll.jsx'
+import styles from './components/styles.module.css'
 
 
 
 function App() {
  
 
-  return <div>
+  return <div className={styles.bimg}  >
     <Header/>
     <Routes>
       <Route exact path='/' element={<Home/>} />
