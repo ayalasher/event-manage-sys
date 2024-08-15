@@ -1,11 +1,14 @@
 import React from 'react'
-import './App.css'
+import { Routes,Route } from 'react-router-dom'
+
 
 function App() {
  
 
   return <div>
-    EMS BACKEND
+    <Routes>
+      <Route exact path='/' element={} ></Route>
+    </Routes>
   </div>
 }
 
