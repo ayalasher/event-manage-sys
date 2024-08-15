@@ -30,7 +30,7 @@ body{
 
 .trial{
     margin-top: 3%;
-    align-self: center;
+    align-items:  center;
     padding: 4%;
 }
 .lsbuttonstxt{
@@ -40,8 +40,9 @@ body{
     text-align: center;
     padding: 1.5%;
     margin: 1.5%;
-    border:1px solid black ;
+    border:2px solid black ;    
     border-radius: 6px;
     width: 40%;
     font-weight: 500;
+    align-content: center;
 }
