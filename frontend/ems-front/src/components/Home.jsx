@@ -3,12 +3,13 @@ import styles from "./styles.module.css"
 
 export default function Home() {
     return <div>
-        <h3></h3>
         {/* <Link to={'/'} >Home</Link> */}
-        <div className={styles.trial} >
-        <Link className={styles.lsbuttonstxt}  to={'/login'} >Login</Link>
-        <Link className={styles.lsbuttonstxt} to={'/Signup'} >Signup </Link>
+        <p className={styles.h2} >Welcome to Destiny events app . Your Ultimate Events related app</p>
+        <div className={styles.linkcontainer}  >
+            <Link className={styles.lsbuttonstxt1}  to={'/login'} >Login</Link>
+            <Link className={styles.lsbuttonstxt2} to={'/Signup'} >Signup </Link>
         </div>
+        
        
         
         {/* Will come back to this and see how to fix it */}

@@ -1,7 +1,14 @@
 /* header */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .htextc{
-    width: 100%;
+   width: 100%;
    margin-top: auto;
+   background-color: #1c1c81;
 
 }
 .htext{
@@ -28,34 +35,48 @@ body{
     height:700px;
 }
 
-.trial{
-    display: flex;
-    margin-top: 3%;
-    align-items:  center;
-    padding: 4%;
-}
-.lsbuttonstxt{
-    font-size: small;
-    color: black; 
+
+.lsbuttonstxt1{
+    font-size: medium;
+    color:white; 
     text-decoration: none;
-    text-align: center;
-    padding: 1%;
-    margin: 1%;
-    border:2px solid black ;    
+    padding: 2%;
+    margin-top: 3% ;
+    margin-left: 40%;
+    margin-right: 1%;
+    border: none; 
     border-radius: 6px;
-    width: 10%;
     font-weight: 500;
+    background-color: black;
+    text-align: center;
 }
 
-.lsbuttonstxt :hover {
-    font-size: small;
-    color: black; 
+.lsbuttonstxt2{
+    font-size: medium;
+    color:white; 
     text-decoration: none;
-    text-align: center;
-    padding: 1.5%;
-    margin: 1.5%;
-    border:2px solid #68A4FF  ;    
+    padding: 2%;
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-right:30%;
+    border: none; 
     border-radius: 6px;
-    width: 10%;
     font-weight: 500;
+    background-color: black;
+    text-align: center;
+}
+
+.linkcontainer{
+    align-items: center;
+    margin: 5% 5% 5% 5%;
+
+}
+/* .trial{
+    margin: auto;
+    width: auto;
+  } */
+
+.h2{
+    margin-left: 5%;
+    text-align: center;
 }

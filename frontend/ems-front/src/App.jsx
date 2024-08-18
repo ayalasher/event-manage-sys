@@ -10,16 +10,25 @@ import styles from './components/styles.module.css'
 
 
 function App() {
- 
 
-  return <div className={styles.bimg}  >
-    <Header/>
+  let rendertest = true
+
+  return <div> 
+    {
+      rendertest ? <Header/> : ""
+    }
+
+    <div>
     <Routes>
       <Route exact path='/' element={<Home/>} />
       <Route path='/login'  element={<Login/>} />
       <Route path='/signup' element={<Signup/>} />
       <Route path='Asll' element={<Asll/>} />
     </Routes>
+    </div>
+    
+  
+
   </div>
 }
 
