@@ -175,3 +175,25 @@ body{
     padding: 5%;
 
 }
+
+.footer{
+    margin-bottom: 0;
+}
+
+.contacts{
+    text-align: end;
+    margin-right: 0;
+    font-size: small;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.socals{
+    align-items: start;
+    margin-left: 0;
+}
+
+.icon{
+    margin: 5px;
+    padding: 5px;
+}
