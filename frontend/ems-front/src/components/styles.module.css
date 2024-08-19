@@ -60,7 +60,7 @@ body{
     margin-left: 1%;
     margin-right:30%;
     border: none; 
-    border-radius: 6px;
+    border-radius: 10px;
     font-weight: 500;
     background-color: black;
     text-align: center;
@@ -79,4 +79,30 @@ body{
 .h2{
     margin-left: 5%;
     text-align: center;
+    margin-top: 3%;
+    font-size: large;
+}
+
+.midcontainer{
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 1px solid rgb(111, 111, 111);
+    border-radius: 10px;
+    display: flex;
+}
+
+.services{
+    margin-top: 3%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.servicecontainer{
+    flex: 1;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
