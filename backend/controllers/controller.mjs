@@ -156,7 +156,7 @@ const fetcheventslist = async(req,res)=>{
     let eventslist ; 
 
     try {
-        eventslist = await Eventmodel.find(); tyk
+        eventslist = await Eventmodel.find();
     } catch (error) {
         console.log(error);
     }
