@@ -136,6 +136,43 @@ body{
         background-color: black;
         text-align: center;
     }
+
+    .form{
+        display: block;
+        align-items: center;
+    }
+    
+    .fset{
+        border-radius: 5px;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    
+    .input{
+        margin: auto;
+        width: 50% !important ;
+        border-radius: 5px;
+        padding: 7px;
+        margin: 7px;
+        border: 1px solid #808080;
+        margin-left: 23.3% !important ;
+        margin-right: 29.3% !important ;
+    
+    }
+    
+    .btn{
+        margin: auto;
+        width: 40% !important ;
+        border-radius: 5px;
+        border: none;
+        background-color: #000080;
+        padding: 7px;
+        margin-left: 29.3% !important ;
+        margin-right: 35.3% !important ;
+    }
 }
 
 .midcontainer1{
@@ -196,4 +233,57 @@ body{
 .icon{
     margin: 5px;
     padding: 5px;
+}
+
+.form{
+    display: block;
+    align-items: center;
+}
+
+.fset{
+    border-radius: 5px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 3px solid #b8b8b8  ;
+}
+
+.input{
+    margin-top: 20px ;
+    margin-bottom: 20px;
+    width: 50%;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 7px;
+    border: 1px solid #808080;
+    margin-left: 27.3%;
+
+}
+
+.btn{
+    /* margin: auto; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 10%;
+    border-radius: 5px;
+    border: none;
+    background-color: #000080;
+    padding: 7px;
+    margin-left: 45.3%;
+}
+
+.ptxt{
+    text-align: center;
+}
+
+.lsbtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 10%;
+    border-radius: 5px;
+    border: none;
+    background-color: #000080;
+    padding: 7px;
 }
