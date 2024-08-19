@@ -6,7 +6,7 @@ export default function Login() {
         return
     }
     return <div>
-        <h3>Login page</h3>
+        {/* <h3>Login page</h3> */}
         <form className={styles.form} >
             <fieldset className={styles.fset}  >
                 <input className={styles.input} type="text" placeholder="Enter your name" />

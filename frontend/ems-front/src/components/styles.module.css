@@ -149,17 +149,18 @@ body{
         align-self: center;
         margin-left: 40px;
         margin-right: 40px;
+        margin-top: 140px;
     }
     
     .input{
         margin: auto;
-        width: 50% !important ;
+        width: 80% !important ;
         border-radius: 5px;
         padding: 7px;
         margin: 7px;
         border: 1px solid #808080;
-        margin-left: 23.3% !important ;
-        margin-right: 29.3% !important ;
+        margin-left: 10.3% !important ;
+        margin-right: 10.3% !important ;
     
     }
     
@@ -172,6 +173,23 @@ body{
         padding: 7px;
         margin-left: 29.3% !important ;
         margin-right: 35.3% !important ;
+    }
+
+    .ptxt{
+        text-align: center;
+        font-size: xx-small !important ;
+    }
+    
+    .lsbtn{
+        margin-top: 5px !important ;
+        margin-bottom: 5px !important ;
+        width: 40% !important ;
+        border-radius: 5px !important    ;
+        border: none;
+        background-color: #000080;
+        padding-left: 5%;
+        padding-right: 5%;
+
     }
 }
 
@@ -248,11 +266,12 @@ body{
     margin-left: 25%;
     margin-right: 25%;
     border: 3px solid #b8b8b8  ;
+    margin-top: 110px;
 }
 
 .input{
-    margin-top: 20px ;
-    margin-bottom: 20px;
+    margin-top: 40px ;
+    margin-bottom: 40px;
     width: 50%;
     border-radius: 5px;
     padding: 7px;
@@ -276,12 +295,13 @@ body{
 
 .ptxt{
     text-align: center;
+    font-size: small;
 }
 
 .lsbtn{
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 10%;
+    width: 20%;
     border-radius: 5px;
     border: none;
     background-color: #000080;
