@@ -3,7 +3,8 @@ import styles from './styles.module.css'
 
 export default function Login() {
     function handlelog() {
-        return
+        return console.log("Changes Testing");
+        
     }
     return <div>
         {/* <h3>Login page</h3> */}
