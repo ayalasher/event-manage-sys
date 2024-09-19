@@ -54,7 +54,7 @@ approuter.post('/authuser',)
 // import schema into stratergies and make it work there
 // make up the stratergy
 approuter.post('/authuser',passport.authenticate("local"),(req,res)=>{
-    res.sendStatus(200).send({message:"authentication succesful"})
+    res.status(200).send({message:"authentication succesful"})
     console.log("authentication succesful");
     console.log(req.user);
     req.session.user = finduser ;
