@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon ./backend/index.mjs ",
-    "start": "node ./backend/index.mjs"
+    "start": "node ./backend/index.mjs",
+    "testjest":"jest"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +24,8 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
