@@ -39,7 +39,5 @@ export default Passport.use(
         } catch (error) {
             done(error,null)
         }
-
-       
     }) 
 )
