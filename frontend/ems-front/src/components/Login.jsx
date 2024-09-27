@@ -1,17 +1,33 @@
 import styles from './styles.module.css'
 import {Link } from 'react-router-dom'
-export default function Signup() {
-    const handlesign = ()=>{
+import { useState } from 'react';
+import axios from 'axios';
 
+
+
+export default function Signup() {
+    const [name,setName]  = useState("")
+    const [password, setpassword] = useState("")
+    const handlelogin = ()=>{
+        axios.post("http;//localhost:3000/evenmg/authuser/",{
+            "username":name,
+            "userpassword":password
+        }).then((Response)=>{
+            console.log(Response);
+            
+        }).catch((err)=>{
+            console.log(err);
+        })
+        
     }
     return <div>
-        <form className={styles.form} >
+        <form onSubmit={handlelogin} className={styles.form} >
             <fieldset className={styles.fset} >
-            <input className={styles.input} type="text" placeholder="Enter name" />
+                <input className={styles.input} onChange={(e)=>setName(e.target.value)} type="text" placeholder="Enter name" />
                 <br />
-                <input className={styles.input} type="password" placeholder="Enter password" />
+                <input onChange={(e)=>setpassword(e.target.value)} className={styles.input} type="password" placeholder="Enter password" />
                 <br />
-                <button onClick={handlesign} className={styles.btn} > log In  </button>
+                <button type='submit' onClick={handlelogin} className={styles.btn} > log In  </button>
                 <br />
                 <p className={styles.ptxt} > Have no account ? <Link to={'/signup'} ><button className={styles.lsbtn} >sign up</button></Link> </p>
             </fieldset>

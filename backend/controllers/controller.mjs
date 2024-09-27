@@ -2,7 +2,7 @@
 
 // controllers for the application
 import { Eventmodel,usermodel,adminmodel } from '../schemas/Schema.mjs';
-import mongoose, { mongo } from 'mongoose';
+import mongoose  from 'mongoose';
 import  hashpassword  from '../hashing/Helper.mjs';
 
 import express from 'express';
@@ -174,7 +174,7 @@ const fetcheventslist = async(req,res)=>{
 
 const fetcheventslistadmin = async(req,res)=>{
 
-    Eventmodel.findById(eventId)
+    Eventmodel.findById(_id)
   .populate('attendees')
   .exec((err, event) => {
     if (err) {
@@ -203,11 +203,11 @@ const fetcheventslistadmin = async(req,res)=>{
 // number of bookings and total revenue is take care of
 const userbooking = async(req,res)=>{
 // Assume userId and eventId are available
-Event.findById(eventId, (err, event) => {
+Event.findById(_id, (err, event) => {
   if (err) {
     console.error('Error finding event:', err);
   } else {
-    event.attendees.push(userId);
+    event.attendees.push(usermodel._id);
     event.save((err) => {
       if (err) {
         console.error('Error saving event:', err);

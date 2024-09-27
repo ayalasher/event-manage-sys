@@ -32,7 +32,7 @@ export default Passport.use(
         console.log(`userpassword:${userpassword}`);
 
         try {
-            const finduser = await  usermodel.findOne({username})
+            const finduser = await  usermodel.findOne(username)
             if(!username) throw new Error("user not found !!")
             if(!comparepassword(userpassword,finduser.userpassword)) throw new Error("invalid password !!")   
                 done(null,finduser)

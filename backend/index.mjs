@@ -6,7 +6,7 @@ import session from 'express-session';
  
 const app = express() ; 
 app.use(express.json())
-
+app.use(cors())
 // session is for learning
 app.use(session({
     secret:"fssystem",
@@ -16,7 +16,7 @@ app.use(session({
         maxAge:60000*1000*1000
     }
 }))
-app.use(cors())
+
 
 
 const PORT = process.env.PORT || 3000 

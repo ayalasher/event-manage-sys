@@ -29,17 +29,17 @@ app.use(passport.session())
 import { addevent,adduser,addadmin,fetcheventslist,fetcheventslistadmin,userbooking,deleteadmin,updateevent,deleteevent,deleteuser } from '../controllers/controller.mjs'
 import mongoose from 'mongoose'
 
-approuter.post('/addevent',addevent) ; 
+approuter.post('/addevent/',addevent) ; 
 
-approuter.post('/adduser',adduser) ; 
+approuter.post('/adduser/',adduser) ; 
 
-approuter.post('/addadmin',addadmin) ; 
+approuter.post('/addadmin/',addadmin) ; 
 
 approuter.get('/eventlist',fetcheventslist) ;
 
 approuter.get('/eventlistadmin',fetcheventslistadmin) ; 
 
-approuter.post('/userbooking',userbooking) 
+approuter.post('/userbooking/',userbooking) 
 
 approuter.delete('/deleteadmin',deleteadmin); 
 
@@ -53,7 +53,7 @@ approuter.post('/authuser',)
 
 // import schema into stratergies and make it work there
 // make up the stratergy
-approuter.post('/authuser',passport.authenticate("local"),(req,res)=>{
+approuter.post('/authuser/',passport.authenticate("local"),(req,res)=>{
     res.status(200).send({message:"authentication succesful"})
     console.log("authentication succesful");
     console.log(req.user);
