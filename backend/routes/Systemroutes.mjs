@@ -49,8 +49,6 @@ approuter.delete('/deleteevent',deleteevent)
 
 approuter.delete('/deleteuser',deleteuser) ; 
 
-approuter.post('/authuser',)
-
 // import schema into stratergies and make it work there
 // make up the stratergy
 approuter.post('/authuser/',passport.authenticate("local"),(req,res)=>{
