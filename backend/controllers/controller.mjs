@@ -163,7 +163,7 @@ const fetcheventslist = async(req,res)=>{
     if (!eventslist) {
         return res.status(404).json({message:"No events found"})
     }
-    return res.status(200).json({eventslist})
+    return res.status(200).json(eventslist)
 }
 
 
